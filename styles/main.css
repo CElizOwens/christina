@@ -18,7 +18,7 @@ section {
 }
 
 header {
-	background-color: #d7f0e5;
+	background: linear-gradient(to top right, #d7f0e5, #b7d0c5);
 	border-bottom: 3px solid #385140;
 }
 
@@ -29,8 +29,8 @@ h1 {
 	font-size: 36px;
 	font-weight: bold;
 	display: inline;
-	text-shadow: 2px 2px 1px #999999,
-		1px 1px 1px #ffffff;
+	text-shadow: 2px 2px 3px #998899,
+		1px 1px 2px #ffffff;
 }
 
 .search {
@@ -77,16 +77,18 @@ nav ul {
 .central-content {
 	width: 800px;
 	margin: 0 auto 0 auto;
-	background-color: #e3ffec;
+	background: linear-gradient(to left bottom, #e3fffd, #afc8e8);
 	border-left: 1px solid #385140;
 	border-right: 1px solid #385140;
+	border-radius: 8px;
+
 }
 
 .coming-up {
-	background-color: #dddddd;
-	padding: 0 20px;
-	border-bottom: 1px solid #385140;
-
+	background: linear-gradient(to bottom, #dddcdd, #ddc5dd);
+	padding-left: 200px;
+	border-bottom: 2px solid #385140;
+	border-radius: 8px;
 }
 
 .welcome {
@@ -94,15 +96,54 @@ nav ul {
 	display: inline-block;
 }
 
-.notetree {
+.trebletree {
 	display: block;
 	float: right;
-	margin: 50px 30px 0 0;
+	padding: 50px 40px 0 0;
 }
 
-.notetree img {
+.trebletree img {
+	border-radius: 3%;
+	border: 2px solid #385140;
+	width: 190px;
+	box-shadow: 3px 3px 4px 1px #aa88aa;
+}
+
+.flutecloseup {
+	display: inline;
+	padding: 20px 25px 20px 35px;
+}
+
+.flutecloseup img {
+	width: 190px;
 	border: 1px solid #385140;
-	width: 80%;
+	border-radius: 50%;
+}
+
+.sheetmusic {
+	display: inline;
+	padding: 20px 25px;
+
+}
+
+.sheetmusic img {
+	width: 190px;
+	border: 1px solid #385140;
+	border-radius: 50%;
+
+}
+
+.cellocloseup {
+	display: inline-block;
+	padding: 20px 25px;
+
+}
+
+.cellocloseup img {
+	width: 190px;
+	border: 1px solid #385140;
+	border-radius: 50%;
+
 }
 
 h1, h2, h3, h4 {
@@ -149,6 +190,10 @@ td {
 	text-align: center;
 	background-color: #385140;
 }
+
+.cafe-ext {}
+
+.cafe-ext img {}
 
 p {
 	margin: 5px 0px 0px 0px;
@@ -243,7 +288,8 @@ h1 a:visited {
 }
 
 footer {
-	background-color: #d7f0e5;
+	/*background-color: #d7f0e5;*/
+	background: linear-gradient(#e3fffd, #b7d0c5);
 	text-align: center;
 	margin: 0px 0px 10px 0px;
 	padding-top:10px;
