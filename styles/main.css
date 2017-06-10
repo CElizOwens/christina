@@ -191,9 +191,39 @@ td {
 	background-color: #385140;
 }
 
-.cafe-ext {}
+.media {
+	display: inline;
+	float: left;
+}
 
-.cafe-ext img {}
+.flutetrio {
+	display: inline-block;
+	width: 350px;
+	margin: 20px;
+}
+
+.flutetrio img {
+	width: 100%;
+	border: 2px solid #385140;
+}
+
+.individuals {
+	width: 350px;
+	display: inline-block;
+}
+
+.cafe-ext {
+	display: inline-block;
+	width: 300px;
+	margin: 50px 50px 20px 40px;
+	float: right;
+}
+
+.cafe-ext img {
+	width: 100%;
+	border: 2px solid #385140;
+	float: right;
+}
 
 p {
 	margin: 5px 0px 0px 0px;
