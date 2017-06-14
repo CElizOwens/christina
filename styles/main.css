@@ -75,7 +75,7 @@ nav ul {
 }
 
 .central-content {
-	width: 800px;
+	/* width: 800px; */
 	margin: 0 auto 0 auto;
 	background: linear-gradient(to left bottom, #e3fffd, #afc8e8);
 	border-left: 1px solid #385140;
