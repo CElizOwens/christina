@@ -86,9 +86,12 @@ nav ul {
 
 .coming-up {
 	background: linear-gradient(to bottom, #dddcdd, #ddc5dd);
-	padding-left: 200px;
 	border-bottom: 2px solid #385140;
 	border-radius: 8px;
+}
+
+.coming-up p, h4 {
+	text-align: center;
 }
 
 .welcome {
