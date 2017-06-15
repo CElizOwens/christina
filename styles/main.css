@@ -96,7 +96,8 @@ nav ul {
 
 .welcome {
 	width: 60%;
-	display: inline-block;
+	display: inline;
+	float: left;
 }
 
 .trebletree {
@@ -112,41 +113,15 @@ nav ul {
 	box-shadow: 3px 3px 4px 1px #aa88aa;
 }
 
-.flutecloseup {
-	display: inline;
-	padding: 20px 25px 20px 35px;
-}
-
-.flutecloseup img {
-	width: 190px;
-	border: 1px solid #385140;
-	border-radius: 50%;
-}
-
-.sheetmusic {
+.ellipse-imgs {
 	display: inline;
 	padding: 20px 25px;
-
 }
 
-.sheetmusic img {
+.ellipse-imgs img {
 	width: 190px;
 	border: 1px solid #385140;
 	border-radius: 50%;
-
-}
-
-.cellocloseup {
-	display: inline-block;
-	padding: 20px 25px;
-
-}
-
-.cellocloseup img {
-	width: 190px;
-	border: 1px solid #385140;
-	border-radius: 50%;
-
 }
 
 h1, h2, h3, h4 {
