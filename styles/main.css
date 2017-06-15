@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body, h1, h2, h3, h4, p, table, th, tr, td, ul {
+body, h1, h2, h3, h4, p, table, th, tr, td, ul, footer {
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	border: 0px 0px 0px 0px;
@@ -9,7 +9,7 @@ body, h1, h2, h3, h4, p, table, th, tr, td, ul {
 }
 
 body {
-	padding: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
 /* background-color: #d3e8d9; */
 }
 
@@ -76,7 +76,7 @@ nav ul {
 
 .central-content {
 	/* width: 800px; */
-	margin: 0 auto 0 auto;
+	margin: 0 auto;
 	background: linear-gradient(to left bottom, #e3fffd, #afc8e8);
 	border-left: 1px solid #385140;
 	border-right: 1px solid #385140;
@@ -95,42 +95,53 @@ nav ul {
 }
 
 .welcome {
-	width: 60%;
-	display: inline;
-	float: left;
-}
-
+/*	width: 60%;
+*/	display: inline;
+/*	float: left;
+*/}
 .trebletree {
-	display: block;
+	width: 25%;
+	display: inline;
 	float: right;
-	padding: 50px 40px 0 0;
+	clear: both;
+	padding: 50px 20px 15px 15px;
 }
 
 .trebletree img {
 	border-radius: 3%;
 	border: 2px solid #385140;
-	width: 190px;
+	width: 100%;
 	box-shadow: 3px 3px 4px 1px #aa88aa;
 }
 
-.ellipse-imgs {
-	display: inline;
-	padding: 20px 25px;
+.ellipse {
+	width: 20%;
+	display: inline-block;
+	padding: 0 5px 10px 5px;
 }
 
-.ellipse-imgs img {
-	width: 190px;
+.ellipse img {
+	width: 100%;
 	border: 1px solid #385140;
 	border-radius: 50%;
 }
 
+.bottom-pics {
+	display: block;
+	text-align: center;
+}
+
+/*.bottom-pics:first-child {
+	padding-top: 50px;
+}
+*/
 h1, h2, h3, h4 {
 	font-family: trebuchetms, sans-serif;
 	color: #385140;
 }
 
 h2 {
-	margin: 0px 10px 0px 0px;
+	margin: 0px 0px 0px 0px;
 	padding-top: 30px;
 	font-weight: bold;
 	font-size: 24px;
@@ -233,8 +244,9 @@ h1 a:visited {
 }
 
 .created {
-	display: inline-block;
+	display: inline;
 	width: 70%;
+	float: left;
 }
 
 .created p {
@@ -242,7 +254,7 @@ h1 a:visited {
 }
 
 .OCOlogo {
-	display: inline-block;
+	display: inline;
 	float: right;
 	margin-top: 50px;
 	width: 30%;
@@ -254,28 +266,32 @@ h1 a:visited {
 }
 
 .eventexample {
+	width: 50%;
 	display: inline;
+	float: left;
 }
 
 .eventexample img {
-	margin: 20px 0 20px 25px;
-	width: 50%;
+/*	margin: 20px 0 20px 25px;
+*/	width: 100%;
 	border: 2px solid #385140;
 }
 
 .goal {
-	display: inline-block;
+	display: inline;
 	float: right;
-	padding: 10px 15px 0 0;
-	width: 40%;
+/*	padding: 10px 15px 0 0;
+*/	width: 40%;
 }
 
 .passion {
-	display: inline-block;
+	display: inline;
 	padding: 15px 0 20px 30px;
 	margin-bottom: 15px;
 	/*margin-top: 40px;*/
-	width: 310px;
+	width: 40%;
+	float: left;
+	clear: left;
 }
 
 .passion p {
@@ -287,21 +303,22 @@ h1 a:visited {
 .accordionviolin {
 	display: inline-block;
 	float: right;
-	width: 380px;
+	width: 40%;
 	padding-top: 15px;
 }
 
 .accordionviolin img{
 	border: 2px solid #385140;
-	width: 350px;
+	width: 100%;
 }
 
 footer {
 	/*background-color: #d7f0e5;*/
 	background: linear-gradient(#e3fffd, #b7d0c5);
 	text-align: center;
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 0px 0px;
 	padding-top:10px;
 	border-top: 3px solid #385140;
 	font-size: 12px;
+	clear: both;
 }
