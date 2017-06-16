@@ -155,7 +155,7 @@ h3 {
 }
 
 h4 {
-	margin: 0px 10px 0px 10px;
+	margin: 0px 10px 0px 0px;
 	padding-top: 20px;
 	color: #004400;
 	font-weight: bold;
@@ -196,22 +196,25 @@ td {
 	border: 2px solid #385140;
 }
 
+.participation {
+	overflow: auto;
+}
+
 .individuals {
-	width: 350px;
-	display: inline-block;
+	display: inline;
+	clear: left;
 }
 
 .cafe-ext {
-	display: inline-block;
-	width: 300px;
-	margin: 50px 50px 20px 40px;
+	display: block;
+	width: 25%;
+	padding: 30px 20px 15px 15px;
 	float: right;
 }
 
 .cafe-ext img {
 	width: 100%;
 	border: 2px solid #385140;
-	float: right;
 }
 
 p {
@@ -256,7 +259,7 @@ h1 a:visited {
 .OCOlogo {
 	display: inline;
 	float: right;
-	margin-top: 50px;
+	padding: 50px 0 0 10px;
 	width: 30%;
 }
 
@@ -284,12 +287,15 @@ h1 a:visited {
 */	width: 40%;
 }
 
+.goal p {
+	line-height: 22px;
+}
 .passion {
 	display: inline;
-	padding: 15px 0 20px 30px;
+	padding: 15px 0 10px 10px;
 	margin-bottom: 15px;
 	/*margin-top: 40px;*/
-	width: 40%;
+	width: 50%;
 	float: left;
 	clear: left;
 }
