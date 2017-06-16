@@ -101,6 +101,7 @@ nav ul {
 */}
 .trebletree {
 	width: 25%;
+	max-width: 106px;
 	display: inline;
 	float: right;
 	clear: both;
