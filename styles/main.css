@@ -188,7 +188,7 @@ td {
 .flutetrio {
 	display: inline-block;
 	width: 350px;
-	margin: 20px;
+	margin: 20px 0px 20px 10px;
 }
 
 .flutetrio img {
@@ -198,6 +198,10 @@ td {
 
 .participation {
 	overflow: auto;
+}
+
+.participation p {
+	line-height: 22px;
 }
 
 .individuals {
