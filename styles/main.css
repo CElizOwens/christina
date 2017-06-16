@@ -249,7 +249,6 @@ h1 a:visited {
 .created {
 	display: inline;
 	width: 70%;
-	float: left;
 }
 
 .created p {
@@ -257,21 +256,27 @@ h1 a:visited {
 }
 
 .OCOlogo {
-	display: inline;
+	width: 115px;
+	display: inline-block;
 	float: right;
-	padding: 50px 0 0 10px;
-	width: 30%;
+	padding: 0 0 10px 40px;
 }
 
 .OCOlogo img {
-	width: 40%;
+	width: 100%;
 	border-radius: 10%;
 }
 
+.mission {
+
+}
+
 .eventexample {
-	width: 50%;
+	width: 40%;
 	display: inline;
 	float: left;
+	clear: both;
+	margin-right: 20px;
 }
 
 .eventexample img {
@@ -282,40 +287,42 @@ h1 a:visited {
 
 .goal {
 	display: inline;
-	float: right;
-/*	padding: 10px 15px 0 0;
-*/	width: 40%;
+	clear: right;
+	padding: 10px 15px;
 }
 
 .goal p {
 	line-height: 22px;
 }
+
+.joy {
+/*	clear: both;
+*/}
 .passion {
 	display: inline;
-	padding: 15px 0 10px 10px;
-	margin-bottom: 15px;
+	padding: 15px 20px 0px 10px;
 	/*margin-top: 40px;*/
-	width: 50%;
-	float: left;
 	clear: left;
 }
 
 .passion p {
 	line-height: 22px;
-	padding-bottom: 0;
-	text-align: center;
 }
 
 .accordionviolin {
-	display: inline-block;
+	display: inline;
 	float: right;
 	width: 40%;
-	padding-top: 15px;
+	padding: 15px 0 5px 10px;
 }
 
 .accordionviolin img{
 	border: 2px solid #385140;
 	width: 100%;
+}
+
+.images-inside {
+	overflow: auto;
 }
 
 footer {
