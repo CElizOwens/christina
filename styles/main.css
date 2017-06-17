@@ -58,16 +58,17 @@ nav {
 
 nav li {
 	display: inline;
-	padding-right: 70px;
-}
-
-nav li:last-child {
-	padding-right: 0px;
+	padding: 0 4%;
+	margin: 0 .3%;
+	border: 1px solid #385140;
+	border-bottom: 0;
+	background-color: #e3ffec;
+	border-radius: 15px 15px 0 0;
 }
 
 nav ul {
 	text-align: center;
-	padding: 5px 0 5px 0;
+	padding: 5px 0 0px 0;
 }
 
 .main {
@@ -213,7 +214,8 @@ td {
 .cafe-ext {
 	display: block;
 	width: 25%;
-	padding: 30px 20px 15px 15px;
+	min-width: 123px;
+	padding: 30px 10px 15px 20px;
 	float: right;
 }
 
