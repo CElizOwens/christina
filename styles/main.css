@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body, h1, h2, h3, h4, p, table, th, tr, td, ul {
+body, h1, h2, h3, h4, p, table, th, tr, td, ul, footer {
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	border: 0px 0px 0px 0px;
@@ -9,7 +9,7 @@ body, h1, h2, h3, h4, p, table, th, tr, td, ul {
 }
 
 body {
-	padding: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
 /* background-color: #d3e8d9; */
 }
 
@@ -58,16 +58,17 @@ nav {
 
 nav li {
 	display: inline;
-	padding-right: 70px;
-}
-
-nav li:last-child {
-	padding-right: 0px;
+	padding: 0 4%;
+	margin: 0 .3%;
+	border: 1px solid #385140;
+	border-bottom: 0;
+	background-color: #e3ffec;
+	border-radius: 15px 15px 0 0;
 }
 
 nav ul {
 	text-align: center;
-	padding: 5px 0 5px 0;
+	padding: 5px 0 0px 0;
 }
 
 .main {
@@ -75,8 +76,8 @@ nav ul {
 }
 
 .central-content {
-	width: 800px;
-	margin: 0 auto 0 auto;
+	/* width: 800px; */
+	margin: 0 auto;
 	background: linear-gradient(to left bottom, #e3fffd, #afc8e8);
 	border-left: 1px solid #385140;
 	border-right: 1px solid #385140;
@@ -86,73 +87,63 @@ nav ul {
 
 .coming-up {
 	background: linear-gradient(to bottom, #dddcdd, #ddc5dd);
-	padding-left: 200px;
 	border-bottom: 2px solid #385140;
 	border-radius: 8px;
 }
 
-.welcome {
-	width: 60%;
-	display: inline-block;
+.coming-up p, h4 {
+	text-align: center;
 }
 
+.welcome {
+/*	width: 60%;
+*/	display: inline;
+/*	float: left;
+*/}
 .trebletree {
-	display: block;
+	width: 25%;
+	max-width: 106px;
+	display: inline;
 	float: right;
-	padding: 50px 40px 0 0;
+	clear: both;
+	padding: 50px 20px 15px 15px;
 }
 
 .trebletree img {
 	border-radius: 3%;
 	border: 2px solid #385140;
-	width: 190px;
+	width: 100%;
 	box-shadow: 3px 3px 4px 1px #aa88aa;
 }
 
-.flutecloseup {
-	display: inline;
-	padding: 20px 25px 20px 35px;
-}
-
-.flutecloseup img {
-	width: 190px;
-	border: 1px solid #385140;
-	border-radius: 50%;
-}
-
-.sheetmusic {
-	display: inline;
-	padding: 20px 25px;
-
-}
-
-.sheetmusic img {
-	width: 190px;
-	border: 1px solid #385140;
-	border-radius: 50%;
-
-}
-
-.cellocloseup {
+.ellipse {
+	width: 20%;
 	display: inline-block;
-	padding: 20px 25px;
-
+	padding: 0 5px 10px 5px;
 }
 
-.cellocloseup img {
-	width: 190px;
+.ellipse img {
+	width: 100%;
 	border: 1px solid #385140;
 	border-radius: 50%;
-
 }
 
+.bottom-pics {
+	display: block;
+	text-align: center;
+}
+
+/*.bottom-pics:first-child {
+	padding-top: 50px;
+}
+*/
 h1, h2, h3, h4 {
 	font-family: trebuchetms, sans-serif;
 	color: #385140;
 }
 
 h2 {
-	margin: 0px 10px 0px 0px;
+	margin: 0px 0px 0px 0px;
 	padding-top: 30px;
 	font-weight: bold;
 	font-size: 24px;
@@ -166,7 +157,7 @@ h3 {
 }
 
 h4 {
-	margin: 0px 10px 0px 10px;
+	margin: 0px 10px 0px 0px;
 	padding-top: 20px;
 	color: #004400;
 	font-weight: bold;
@@ -199,7 +190,7 @@ td {
 .flutetrio {
 	display: inline-block;
 	width: 350px;
-	margin: 20px;
+	margin: 20px 0px 20px 10px;
 }
 
 .flutetrio img {
@@ -207,22 +198,30 @@ td {
 	border: 2px solid #385140;
 }
 
+.participation {
+	overflow: auto;
+}
+
+.participation p {
+	line-height: 22px;
+}
+
 .individuals {
-	width: 350px;
-	display: inline-block;
+	display: inline;
+	clear: left;
 }
 
 .cafe-ext {
-	display: inline-block;
-	width: 300px;
-	margin: 50px 50px 20px 40px;
+	display: block;
+	width: 25%;
+	min-width: 123px;
+	padding: 30px 10px 15px 20px;
 	float: right;
 }
 
 .cafe-ext img {
 	width: 100%;
 	border: 2px solid #385140;
-	float: right;
 }
 
 p {
@@ -255,7 +254,7 @@ h1 a:visited {
 }
 
 .created {
-	display: inline-block;
+	display: inline;
 	width: 70%;
 }
 
@@ -264,66 +263,82 @@ h1 a:visited {
 }
 
 .OCOlogo {
+	width: 115px;
 	display: inline-block;
 	float: right;
-	margin-top: 50px;
-	width: 30%;
+	padding: 0 0 10px 40px;
 }
 
 .OCOlogo img {
-	width: 40%;
+	width: 100%;
 	border-radius: 10%;
 }
 
+.mission {
+
+}
+
 .eventexample {
+	width: 40%;
 	display: inline;
+	float: left;
+	clear: both;
+	margin-right: 20px;
 }
 
 .eventexample img {
-	margin: 20px 0 20px 25px;
-	width: 50%;
+/*	margin: 20px 0 20px 25px;
+*/	width: 100%;
 	border: 2px solid #385140;
 }
 
 .goal {
-	display: inline-block;
-	float: right;
-	padding: 10px 15px 0 0;
-	width: 40%;
+	display: inline;
+	clear: right;
+	padding: 10px 15px;
 }
 
+.goal p {
+	line-height: 22px;
+}
+
+.joy {
+/*	clear: both;
+*/}
 .passion {
-	display: inline-block;
-	padding: 15px 0 20px 30px;
-	margin-bottom: 15px;
+	display: inline;
+	padding: 15px 20px 0px 10px;
 	/*margin-top: 40px;*/
-	width: 310px;
+	clear: left;
 }
 
 .passion p {
 	line-height: 22px;
-	padding-bottom: 0;
-	text-align: center;
 }
 
 .accordionviolin {
-	display: inline-block;
+	display: inline;
 	float: right;
-	width: 380px;
-	padding-top: 15px;
+	width: 40%;
+	padding: 15px 0 5px 10px;
 }
 
 .accordionviolin img{
 	border: 2px solid #385140;
-	width: 350px;
+	width: 100%;
+}
+
+.images-inside {
+	overflow: auto;
 }
 
 footer {
 	/*background-color: #d7f0e5;*/
 	background: linear-gradient(#e3fffd, #b7d0c5);
 	text-align: center;
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 0px 0px;
 	padding-top:10px;
 	border-top: 3px solid #385140;
 	font-size: 12px;
+	clear: both;
 }
