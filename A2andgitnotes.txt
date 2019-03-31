@@ -1,0 +1,227 @@
+
+NOTES FOR USING GIT AND A2HOSTING
+=================================
+
+***To be continued... Go to https://www.a2hosting.com/kb/getting-started-guide for more info.***
+
+
+	[ 5/14/18 ]
+
+
+A2hosting Info:
+---------------
+
+1) Log in to A2Hosting
+2) Go to Client Area (may be automatic upon login)
+3) Click on Connection Details for opusoakland.com
+4) Username and Password listed there
+
+*********************
+Username (cPanel/SSH/FTP):
+opusoakl
+
+Password (cPanel/SSH/FTP):
+p6e1T80Lbb
+*********************
+
+
+
+*To Log Into A2Hosting's Server:
+-------------------------------
+ssh -p 7822 opusoakl@opusoakland.com
+p6e1T80Lbb
+
+
+GitHub Account Info:
+--------------------
+git@github.com:CElizOwens/christina.git
+u: CElizOwens
+p: gitWoman2018
+
+
+opusoakland.com Local Repository:
+---------------------------------
+~/Desktop/projects/christina
+
+
+	=====================
+1) Push to github from laptop:
+
+	From repository folder on laptop: (from one terminal window)
+	- add and commit to your branch.
+	- git push origin <branch>
+
+2) Pull from github to A2Hosting:
+
+	- Open a second terminal window, ssh into A2hosting.
+		*(see commands above)
+
+	From directory on A2hosting server: (from second terminal window)
+	- cd public_html
+	- git pull origin <branch>
+	=====================
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	[ 5/15/18 ]
+
+#PROBLEM: Somehow, git got ahold of the image files. The three locations are out of sync (that is, my laptop, GitHub, and A2Hosting).
+
+This can be fixed. First step is to examine all of the commits. Look for anything happening with the image files.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	[ 5/16/18 ]
+
+#PROBLEM continued...
+
+'opusoakl@a2ss48 [~/public_html]# git checkout master
+Switched to branch 'master'
+Your branch and 'origin/master' have diverged,
+and have 11 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)'
+
+
+
+Web server's 'master', 'A2changes', and 'responsive design':
+
+	In line with GitHub's responsive_design.
+
+		commit 7bc4f50f77a05150f2bb1aa1ea8068274643c35f (origin/responsive_design)
+		Author: Christina Owens <owens.christina@gmail.com>
+		Date:   Thu Jun 15 23:54:10 2017 -0700
+
+		    images folder; all images
+
+Web server's 'master' and 'A2changes':
+
+	In line with GitHub's A2changes.
+	(this is the commit I need GitHub and laptop to revert back to. ***July 30 21:04:39***)
+
+		commit 650f808024c960c94b43c9cb74309e027cc143a9 (HEAD -> master, origin/A2changes, A2changes)
+		Author: Christina Owens <owens.christina@gmail.com>
+		Date:   Fri Jun 30 21:04:39 2017 -0700
+
+		    updated Events page and date for 'Coming Up'
+		    on home page; created July Facebook event and add link to home page
+
+Acer's 'responsive_design':
+
+	Says is up-to-date with GitHub's 'responsive_design'.
+
+		commit 650f808024c960c94b43c9cb74309e027cc143a9
+		Author: Christina Owens <owens.christina@gmail.com>
+		Date:   Fri Jun 30 21:04:39 2017 -0700
+
+		    updated Events page and date for 'Coming Up'
+		    on home page; created July Facebook event and add link to home page
+
+Acer's 'A2changes':
+
+	Says is ahead of GitHub's 'A2changes' by 1 commit.
+
+		commit 0c31bd0ffb499b7c6f5b6270c2910aea64d23d0b
+		Author: Christina Owens <owens.christina@gmail.com>
+		Date:   Wed May 16 21:28:14 2018 -0700
+
+		    Revert "images folder; all images"
+		    
+		    This reverts commit 7bc4f50f77a05150f2bb1aa1ea8068274643c35f.
+
+Acer's 'master':
+
+	Says is up-to-date with GitHub's 'master':
+
+		commit 809d84772317539bd0622222d259498bf6cc463a
+		Author: Christina Owens <owens.christina@gmail.com>
+		Date:   Mon May 14 22:35:12 2018 -0700
+
+		    Adjust Facebook link from 'Like' to
+		    'Like us on Facebook' for better visibility
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	[ 5/16/18 ] Continued...
+
+Just learned that:
+
+	'A2changes' and 'responsive_design' are identical *except* that 'A2changes' has commit 0c31bd0f with message 'Revert "images folder; all images"'.
+
+	'master' alone has the 3 latest commits (updating the copyright dates and the event dates/location names).
+
+
+So now:
+
+	1) 'A2changes' should now get merged into 'master' and resulting conflicts can be resolved.
+	2) Afterwards, 'master' can be pushed to GitHub's master branch.
+
+
+SUCCESS. Now need to place the images back on the web server *but only through A2hosting's website*. A project for tomorrow.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	[ 5/17/18 ]
+
+To get to files on A2hosting:
+
+Log into A2hosting.
+Log into cpanel.
+Double click *specifically* on the string 'public_html' (not the folder icon).
+------------------------
+
+I've created a new images folder inside of public_html.
+Going to upload the images from my laptop to the folder.
+------------------------
+
+**Done! Website in successfully updated!**
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	[ 10/17/18 ]
+
+1) Pushing changes of date and venue to git
+	- changed 'index.html' and 'event.html'
+
+This is what happened. Look up 'push.default matching' vs. 'push.default simple':
+
+----------------
+owens@owens:~/Desktop/projects/christina$ git push origin
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Warning: Permanently added the RSA host key for IP address '192.30.255.112' to the list of known hosts.
+Counting objects: 11, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 541 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To git@github.com:CElizOwens/christina.git
+   650f808..0c31bd0  A2changes -> A2changes
+   a666e6e..2202d50  master -> master
+owens@owens:~/Desktop/projects/christina$ 
+------------
+
+2) Go to A2Hosting. Perform 'git pull origin master'.
+
+*** Done. Events updated. ***
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
