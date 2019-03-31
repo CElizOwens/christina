@@ -225,3 +225,29 @@ owens@owens:~/Desktop/projects/christina$
 *** Done. Events updated. ***
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+git fetch: download github repo's branch status
+	- What is the remote repo's current state?
+	- If it is different from the local repo,
+	  it will return a hash of the local repo's
+	  latest commit and then the hash of the
+	  remote repo's latest commit.
+
+git pull: combination of two steps.
+	- fetch...
+	- and then merge what has been fetched from
+	  the remote repo into the local repo
+
+git log master..origin/master:
+	- show commits in the remote repo
+	  that are not in the local repo
+	  (this is if there are changes in the remote repo
+	   that are not in the local repo)
+
+git log origin/master..master:
+	- show commits in the local repo
+	  that are not in the remote repo
+	  (this is if there are changes in the local repo
+	   that are not in the remote repo)
+
