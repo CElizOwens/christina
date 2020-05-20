@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block title %}{% endblock %}
+  <title>Opus Oakland</title>
+  <link type="text/css" rel="stylesheet" href="../styles/main.css">
+</head>
+
+
+<body>
+  <header>
+    <!-- <img src="images/notetree.png" alt="tree with musical notes"> -->
+    <div class="topspace">
+      {% block header %}{% endblock %}
+      <h1><a href="index.html">Opus Oakland</a></h1>
+      <!-- <div class="search">
+        <form action="http://www.google.com/search" method="GET"
+        target="_blank">
+        <input type="search" placeholder="Search" name="q"/></form>
+      </div> -->
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <!-- <li><a href="locations.html">Locations</a></li>
+        <li><a href="media.html">Media</a></li> -->
+        <li><a href="participation.html">Participation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main">
+    {% block body %}{% endblock %}
+    <div class="central-content">
+
+      <div class="coming-up">
+        <h4>Coming up:</h4>
+        <p><a href="https://www.facebook.com/events/144637899402195/" target="_blank">Baker & Commons</a>: May 11th, 6-8pm</p>
+      </div>
+    }
+
+<!-- <p>Like us on Facebook!</p>
+<button type="button"
+onclick = "href ='http://www.facebook.com/opusOAK' target=_blank">Like!</
+button> -->
+
+<section>
+  <div class="trebletree">
+    <img src="images/trebletree.jpg" alt="tree with treble clefs">
+  </div>
+
+  <div class="welcome">
+
+    <h2>Sharing the Joy of Chamber Music</h2>
+
+    <p>Whether you've happened to see us through the window of a coffee
+    shop or stumbled upon our website or <a href=
+    "http://www.facebook.com/opusOAK">Facebook page</a>, we are delighted
+    that you've found us and hope that you will join us at any of our
+    upcoming events.</p>
+
+    <p>Peruse our site at your leisure, and if you find that you have a
+    particular desire for large scale, orchestral fare --
+    <em>also free and provided by musicians in our community</em> --
+    check out <a href=
+    "https://sites.google.com/site/oaklandcivicorchestra/home" target="_blank"><strong>Oakland Civic Orchestra</strong></a>!
+    </p>
+
+  </div>
+</section>
+
+<section class="bottom-pics">
+  <div class="ellipse">
+    <img src="images/flutecloseup.jpg" alt="close up picture of a flute">
+  </div>
+
+  <div class="ellipse">
+    <img src="images/sheetmusic.jpg" alt="sheet music">
+  </div>
+
+  <div class="ellipse">
+    <img src="images/cellocloseup.jpg" alt="close up picture of a cello">
+  </div>
+</section>
+
+
+
+</div>
+
+</div>
+
+<footer>
+  <p>Opus Oakland. 2019. Webmaster:
+    <a href="https://www.google.com/search?q=Christina+Owens">Christina Owens</a>.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
