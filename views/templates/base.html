@@ -1,104 +1,64 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% block title %}{% endblock %}
-  <title>Opus Oakland</title>
-  <link type="text/css" rel="stylesheet" href="../styles/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}{% endblock %}
+    <!--title>Opus Oakland</title-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 
 <body>
-  <header>
-    <!-- <img src="images/notetree.png" alt="tree with musical notes"> -->
-    <div class="topspace">
-      {% block header %}{% endblock %}
-      <h1><a href="index.html">Opus Oakland</a></h1>
-      <!-- <div class="search">
-        <form action="http://www.google.com/search" method="GET"
-        target="_blank">
-        <input type="search" placeholder="Search" name="q"/></form>
-      </div> -->
+    <div class="container">
+        <br>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+            <a class="navbar-brand" href="/">Opus Oakland</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample09">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/scratch">Link</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-md-0">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </nav>
+        <br>
+
+        <div class="main">
+            <div class="central-content">
+                {% block body %}{% endblock %}
+
+            </div>
+        </div>
+
+        <footer>
+            <p>Opus Oakland. 2019. Webmaster:
+            <a href="https://www.google.com/search?q=Christina+Owens">Christina Owens</a>.</p>
+        </footer>
     </div>
-
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html">Events</a></li>
-        <!-- <li><a href="locations.html">Locations</a></li>
-        <li><a href="media.html">Media</a></li> -->
-        <li><a href="participation.html">Participation</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="main">
-    {% block body %}{% endblock %}
-    <div class="central-content">
-
-      <div class="coming-up">
-        <h4>Coming up:</h4>
-        <p><a href="https://www.facebook.com/events/144637899402195/" target="_blank">Baker & Commons</a>: May 11th, 6-8pm</p>
-      </div>
-    }
-
-<!-- <p>Like us on Facebook!</p>
-<button type="button"
-onclick = "href ='http://www.facebook.com/opusOAK' target=_blank">Like!</
-button> -->
-
-<section>
-  <div class="trebletree">
-    <img src="images/trebletree.jpg" alt="tree with treble clefs">
-  </div>
-
-  <div class="welcome">
-
-    <h2>Sharing the Joy of Chamber Music</h2>
-
-    <p>Whether you've happened to see us through the window of a coffee
-    shop or stumbled upon our website or <a href=
-    "http://www.facebook.com/opusOAK">Facebook page</a>, we are delighted
-    that you've found us and hope that you will join us at any of our
-    upcoming events.</p>
-
-    <p>Peruse our site at your leisure, and if you find that you have a
-    particular desire for large scale, orchestral fare --
-    <em>also free and provided by musicians in our community</em> --
-    check out <a href=
-    "https://sites.google.com/site/oaklandcivicorchestra/home" target="_blank"><strong>Oakland Civic Orchestra</strong></a>!
-    </p>
-
-  </div>
-</section>
-
-<section class="bottom-pics">
-  <div class="ellipse">
-    <img src="images/flutecloseup.jpg" alt="close up picture of a flute">
-  </div>
-
-  <div class="ellipse">
-    <img src="images/sheetmusic.jpg" alt="sheet music">
-  </div>
-
-  <div class="ellipse">
-    <img src="images/cellocloseup.jpg" alt="close up picture of a cello">
-  </div>
-</section>
-
-
-
-</div>
-
-</div>
-
-<footer>
-  <p>Opus Oakland. 2019. Webmaster:
-    <a href="https://www.google.com/search?q=Christina+Owens">Christina Owens</a>.</p>
-  </footer>
-
-
-  <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>

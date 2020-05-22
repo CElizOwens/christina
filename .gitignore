@@ -1,2 +1,7 @@
 notes.txt
 scratch.py
+images/
+*__pycache__/
+views/static/css/temp.css
+views/templates/scratch.html
+
