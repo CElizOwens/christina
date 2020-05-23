@@ -4,11 +4,27 @@
 <title>index_v2</title>
 {% endblock %}
 
-{% block nav %}
-<span align="right" class="nav-item active"><a class="nav-link" href="/login">admin login</a></span>
-<!-- <img src="{{url_for('static', filename='images/trebletree.jpg')}}" alt="tree with treble clefs"  style="width:10%" class="img-fluid rounded-circle"> -->
-
-{% endblock %}
 
 
 {% block body %}
+<div>
+  <div class="card border-0 shadow my-5" style="opacity: 0.80">
+    <div class="card-body p-3">
+      <h1 class="font-weight-light">Coming Up:</h1>
+      <p class="lead">To be Announced...</p>
+      <h2 class="font-weight-light">Location</h2>
+      <p class="lead">This would be the name and address of a coffee shop, restaurant or bar.
+      </p>
+      <!-- <div style="height: 100%"></div> -->
+      <h3 class="font-weight-light">Program</h3>
+      <p class="lead mb-0"><p>This would be a listing of the pieces that will be played.
+      </p>
+      <p>Here would be a list of the names of those performing.
+      </p>
+      <h4 class="font-weight-light">Other performances</h4>
+      <p>This would be a blurb about an upcoming OCO concert.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -3,13 +3,13 @@ from flask import render_template, request, redirect, abort
 from app import app
 
 
+
+@app.route('/index_v1')
+def index():
+    return render_template('index_v1.html')
+
 @app.route('/')
 @app.route('/index')
-def index():
-    return render_template('index.html')
-
-
-@app.route('/index_v2')
 def index_v2():
     return render_template('index_v2.html')
 
