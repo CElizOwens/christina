@@ -1,7 +1,6 @@
 from flask import render_template, request, redirect, abort
 # from persistence import persistence
-from app import app
-
+from website import app
 
 
 @app.route('/index_v1')
