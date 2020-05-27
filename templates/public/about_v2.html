@@ -1,6 +1,6 @@
-{% extends 'public/base_v2.html' %}
+{% extends 'public/templates/public_template.html' %} <!-- This is base_v2.html -->
 
-{% block head %}
+{% block title %}
 <title>about_v2</title>
 {% endblock %}
 
@@ -11,39 +11,42 @@
 </div>
 {% endblock %} -->
 
+{% block bodyclass %}
+<body class="container bg-serious">
+{% endblock %}
 
-{% block body %}
-<div>
-  <div class="card border-0 shadow my-5" style="opacity: 0.85">
-    <div class="card-body p-3">
-      <h1 class="font-weight-light">Sharing the Joy of Chamber Music</h1>
-      <p class="lead">Whether you've seen us through the window of a coffee
-      shop or stumbled upon us on <a href=
-      "http://www.facebook.com/opusOAK" class="text-info">facebook</a>, we are delighted
-      that you've found us and hope that you will join us at any of our
-      upcoming events.</p>
-      <h2 class="font-weight-light">About</h2>
-      <p class="lead">Opus Oakland was created in October of 2016 by members of
-      <a href="https://www.oaklandcivicorchestra.com">Oakland Civic Orchestra</a>, a community orchestra affliated with Oakland Parks and Recreation.
-      </p>
-      <!-- <div style="height: 100%"></div> -->
-      <p class="lead mb-0"><p>The <strong>goal</strong> of Opus Oakland is to provide a regular small
-      ensemble performance opportunity where interested musicians can
-      meet other chamber music enthusiasts and expand their repertoire.
-      </p>
-      <p>As a result, cafe-goers around Oakland get the benefit of
-      receiving free mini-concerts of an ever-changing variety of
-      classical genres with fellow friends and music lovers in a casual,
-      intimate atmosphere.
-      </p>
-      <p>Chamber music is a <strong>passion</strong> of ours, and as
-      amateurs and sometime-freelance giggers with "day" jobs, we
-      merely enjoy having the outlet of bringing the unique charm and
-      intimacy of a small string ensemble, the pleasantries of a flute
-      quartet, or even the mystique of European folk tunes for accordion
-      /violin duo into the lives of any and all who'd like to listen.
-      </p>
+{% block main %}
+    <div>
+      <div class="card border-0 shadow my-5" style="opacity: 0.85">
+        <div class="card-body p-3">
+          <h1 class="font-weight-light">Sharing the Joy of Chamber Music</h1>
+          <p class="lead">Whether you've seen us through the window of a coffee
+          shop or stumbled upon us on <a href=
+          "http://www.facebook.com/opusOAK" class="text-info">facebook</a>, we are delighted
+          that you've found us and hope that you will join us at any of our
+          upcoming events.</p>
+          <h2 class="font-weight-light">About</h2>
+          <p class="lead">Opus Oakland was created in October of 2016 by members of
+          <a href="https://www.oaklandcivicorchestra.com">Oakland Civic Orchestra</a>, a community orchestra affliated with Oakland Parks and Recreation.
+          </p>
+          <!-- <div style="height: 100%"></div> -->
+          <p class="lead mb-0"><p>The <strong>goal</strong> of Opus Oakland is to provide a regular small
+          ensemble performance opportunity where interested musicians can
+          meet other chamber music enthusiasts and expand their repertoire.
+          </p>
+          <p>As a result, cafe-goers around Oakland get the benefit of
+          receiving free mini-concerts of an ever-changing variety of
+          classical genres with fellow friends and music lovers in a casual,
+          intimate atmosphere.
+          </p>
+          <p>Chamber music is a <strong>passion</strong> of ours, and as
+          amateurs and sometime-freelance giggers with "day" jobs, we
+          merely enjoy having the outlet of bringing the unique charm and
+          intimacy of a small string ensemble, the pleasantries of a flute
+          quartet, or even the mystique of European folk tunes for accordion
+          /violin duo into the lives of any and all who'd like to listen.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 {% endblock %}
