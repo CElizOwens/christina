@@ -3,10 +3,20 @@ from flask import render_template, request, redirect, abort
 from website import app
 
 
-@app.route('/admin/dashboard')
-def admin_dashboard():
-    return "Admin Dashboard"
 
-@app.route('/admin/profile')
+@app.route('/login', methods=["GET", "POST"])
+def admin_login():
+    return render_template('admin/login.html')
+
+@app.route('/dashboard')
+def admin_dashboard():
+    return render_template('admin/dashboard.html')
+
+@app.route('/repertoire')
+def repertoire():
+    return render_template('admin/repertoire.html')
+
+
+@app.route('/personnel')
 def admin_profile():
-    return "Admin Profile"
+    return render_template('admin/personnel.html')
