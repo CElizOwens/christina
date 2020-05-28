@@ -1,7 +1,6 @@
 notes.txt
-scratch.py
-images/
+A2andgitnotes.txt
+website_env/
+website/static/images/
 *__pycache__/
-views/static/css/temp.css
-views/templates/scratch.html
 
