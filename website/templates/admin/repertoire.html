@@ -8,8 +8,43 @@
     <div class="col">
       <h1>Repertoire</h1>
       <hr>
-
     </div>
   </div>
+
+  <form action="/repertoire" method="POST">
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label>Composer</label>
+          <input class="form-control" type="text" name="composer">
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="form-group">
+          <label>Title</label>
+          <input class="form-control" type="text" name="title">
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="form-group">
+          <label>Opus</label>
+          <input class="form-control" type="text" name="opus">
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="form-group">
+          <label>Date Played</label>
+          <input class="form-control" type="text" name="date_played">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <hr>
+
 </div>
 {% endblock %}

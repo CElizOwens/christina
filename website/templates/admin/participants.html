@@ -1,0 +1,73 @@
+{% extends 'admin/templates/admin_template.html' %}
+
+{% block title %}Participants{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Participants</h1>
+      <hr>
+
+      <div class="row">
+
+        <div class="col-4">
+          <h4>Violin</h4>
+          <ul>
+            {% for violin in violins %}
+            <li>{{ violin }}</li>
+            {% endfor %}
+          </ul>
+          <h4>Viola (+ violin)</h4>
+          <ul>
+            {% for viola in violas %}
+            <li>{{ viola }}</li>
+            {% endfor %}
+          </ul>
+          <h4>Cello</h4>
+          <ul>
+            {% for cello in cellos %}
+            <li>{{ cello }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="col-4">
+          <h4>Woodwind</h4>
+          <ul>
+            {% for wind in winds %}
+            <li>{{ wind }}</li>
+            {% endfor %}
+          </ul>
+          <h4>Groups</h4>
+          <ul>
+            {% for group in groups %}
+            <li>{{ group }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="col-4">
+          <h4>Add player/group</h4>
+          <form action="/participants" method="POST">
+
+            <div class="form-group">
+                <label>Category</label>
+                <input class="form-control" type="text" name="category">
+            </div>
+
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" type="text" name="name">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
