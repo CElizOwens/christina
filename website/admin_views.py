@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, abort
-# from persistence import persistence
+from website.persistence import persistence
 from website import app
 
 
@@ -16,9 +16,14 @@ def admin_dashboard():
 @app.route('/repertoire', methods=['GET', 'POST'])
 def repertoire():
     if request.method == 'POST':
-        req = request.form
+        composer = request.form['composer']
+        title = request.form['title']
+        opus = request.form['opus']
+        date_played = request.form['date_played']
+        persistence.insert_piece(composer, title, opus, date_played)
         redirect('/repertoire')
-    return render_template('admin/repertoire.html')
+    all_pieces = persistence.get_all_pieces()
+    return render_template('admin/repertoire.html', pieces=all_pieces)
 
 
 rost = {

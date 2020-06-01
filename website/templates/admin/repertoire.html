@@ -46,5 +46,22 @@
   </form>
   <hr>
 
+  {% for piece in pieces %}
+  <div class="row">
+    <div class="col-3">
+      {{ piece.composer }}
+    </div>
+    <div class="col-3">
+      {{ piece.title }}
+    </div>
+    <div class="col-3">
+      {{ piece.opus }}
+    </div>
+    <div class="col-3">
+      {{ piece.date_played }}
+    </div>
+  </div>
+  {% endfor %}
+
 </div>
 {% endblock %}
