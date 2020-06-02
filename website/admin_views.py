@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, abort
 from website.persistence import persistence
 from website import app
+from dateutil.parser import parse
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -19,7 +20,7 @@ def repertoire():
         composer = request.form['composer']
         title = request.form['title']
         opus = request.form['opus']
-        date_played = request.form['date_played']
+        date_played = parse(request.form['date_played']).date()
         persistence.insert_piece(composer, title, opus, date_played)
         redirect('/repertoire')
     all_pieces = persistence.get_all_pieces()

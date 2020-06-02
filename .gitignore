@@ -3,4 +3,4 @@ A2andgitnotes.txt
 website_env/
 website/static/images/
 *__pycache__/
-
+*.mypy_cache/
