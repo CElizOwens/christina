@@ -1,3 +1,4 @@
 from collections import namedtuple
 
-Piece = namedtuple('Piece', ['id', 'composer', 'title', 'opus', 'date_played'])
+Piece = namedtuple('Piece', ['composer', 'title', 'opus', 'date_played', 'name'])
+Ensemble = namedtuple('Ensemble', ['id', 'name', 'size'])

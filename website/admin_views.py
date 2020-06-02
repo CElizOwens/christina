@@ -21,10 +21,12 @@ def repertoire():
         title = request.form['title']
         opus = request.form['opus']
         date_played = parse(request.form['date_played']).date()
-        persistence.insert_piece(composer, title, opus, date_played)
+        ensemble_id = request.form['ensemble_id']
+        persistence.insert_piece(composer, title, opus, date_played, ensemble_id)
         redirect('/repertoire')
     all_pieces = persistence.get_all_pieces()
-    return render_template('admin/repertoire.html', pieces=all_pieces)
+    all_ensembles = persistence.get_all_ensembles()
+    return render_template('admin/repertoire.html', pieces=all_pieces, ensembles=all_ensembles)
 
 
 rost = {
