@@ -54,42 +54,11 @@
           <select id="ensemble_id" class="form-control" name="ensemble_id">
             <option selected>Choose</option>
             {% for ensemble in ensembles %}
-              <option value="{{ ensemble.id }}">{{ ensemble.name }}</option>
+              <option value="{{ ensemble.id }}">{{ ensemble.ens_type }}</option>
             {% endfor %}
-            <!-- <option>Solo</option>
-            <option>Duet</option>
-            <option>String Trio</option>
-            <option>String Quartet</option>
-            <option>Viola Quintet</option>
-            <option>Cello Quintet</option>
-            <option>String Sextet</option>
-            <option>Flute + String Trio</option>
-            <option>Flute + String Quartet</option>
-            <option>Cello Ensemble</option>
-            <option>Brass Quintet</option>
-            <option>Not Listed</option> -->
           </select>
         </div>
       </div>
-      <!-- <div class="col-2">
-        <div class="dropdown">
-          <label>Ensemble</label>
-          <button type="button" class="btn btn-secondary btn-sm dropdown-toggle align-middle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose Type</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Solo</a>
-            <a class="dropdown-item" href="#">Duet</a>
-            <a class="dropdown-item" href="#">String Trio</a>
-            <a class="dropdown-item" href="#">String Quartet</a>
-            <a class="dropdown-item" href="#">Viola Quintet</a>
-            <a class="dropdown-item" href="#">Cello Quintet</a>
-            <a class="dropdown-item" href="#">String Sextet</a>
-            <a class="dropdown-item" href="#">Flute + String Trio</a>
-            <a class="dropdown-item" href="#">Flute + String Quartet</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Unknown</a>
-          </div>
-        </div>
-      </div> -->
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
@@ -110,7 +79,7 @@
       {{ piece.date_played }}
     </div>
     <div class="col-2">
-      {{ piece.name }}
+      {{ piece.ens_type }}
     </div>
   </div>
   {% endfor %}

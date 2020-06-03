@@ -3,6 +3,8 @@ from website.persistence import persistence
 from website import app
 from dateutil.parser import parse
 
+from datetime import date
+
 
 @app.route('/login', methods=["GET", "POST"])
 def admin_login():

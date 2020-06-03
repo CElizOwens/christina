@@ -9,7 +9,7 @@ engine = create_engine(databaseURI, echo=True)
 def get_all_pieces():
     with engine.connect() as con:
         # result = con.execute("SELECT * FROM piece;")
-        result = con.execute("SELECT p.composer, p.title, p.opus, p.date_played, e.name FROM piece p INNER JOIN ensemble e ON p.ensemble_id = e.id;")
+        result = con.execute("SELECT p.composer, p.title, p.opus, p.date_played, e.ens_type FROM piece p INNER JOIN ensemble e ON p.ensemble_id = e.id;")
 
         pieces = []
         for row in result:
