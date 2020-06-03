@@ -31,6 +31,16 @@ def repertoire():
     return render_template('admin/repertoire.html', pieces=all_pieces, ensembles=all_ensembles)
 
 
+@app.route('/events')
+def events():
+    return render_template('admin/events.html')
+
+
+@app.route('/create_event')
+def create_event():
+    return render_template('admin/create_event.html')
+
+
 rost = {
     'violins': ['Harmony TomSun', 'Lila McDonald', 'Niko Durr', 'Teresa Wang'],
     'violas': ['Sara Rusche', 'Thomas Chow (+)', 'Christina Owens (+)'],
@@ -40,9 +50,9 @@ rost = {
 }
 
 
-@app.route('/participants', methods=['GET', 'POST'])
+@app.route('/roster', methods=['GET', 'POST'])
 def admin_participants():
     if request.method == 'POST':
         req = request.form
         rost[req['category']].append(req['name'])
-    return render_template('admin/participants.html', violins=rost['violins'], violas=rost['violas'], cellos=rost['cellos'], winds=rost['winds'], groups=rost['groups'])
+    return render_template('admin/roster.html', violins=rost['violins'], violas=rost['violas'], cellos=rost['cellos'], winds=rost['winds'], groups=rost['groups'])
