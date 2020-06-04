@@ -31,14 +31,20 @@ def repertoire():
     return render_template('admin/repertoire.html', pieces=all_pieces, ensembles=all_ensembles)
 
 
-@app.route('/events')
+@app.route('/events', methods=['GET', 'POST'])
 def events():
-    return render_template('admin/events.html')
+    if request.method == 'POST':
+        location = request.form['location']
+        day_time = parse(request.form['day_time'])
+        persistence.insert_event(location, day_time)
+        redirect('/events')
+    all_events = persistence.get_all_events()
+    return render_template('admin/events.html', events=all_events)
 
 
-@app.route('/create_event')
+@app.route('/edit_event')
 def create_event():
-    return render_template('admin/create_event.html')
+    return render_template('admin/edit_event.html')
 
 
 rost = {
