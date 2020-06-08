@@ -42,9 +42,13 @@ def events():
     return render_template('admin/events.html', events=all_events)
 
 
-@app.route('/edit_event')
-def create_event():
-    return render_template('admin/edit_event.html')
+@app.route('/edit_event/<event_id>')
+def create_event(event_id):
+    result = persistence.get_event(event_id)
+    print(result)
+
+    event = {'id': result.id, 'location': result.location, 'day_time': parse(str(result.day_time))}
+    return render_template('admin/edit_event.html', event=event)
 
 
 rost = {

@@ -8,8 +8,8 @@
     <div class="col">
       <h2>Edit Event</h2>
     </div>
-    <div class="col">Date: <p>2018-05-25 17:00:00</p></div>
-    <div class="col">Location: <p>Caffe Chiave, Piedmont</p></div>
+    <div class="col">Date: <p>{{ event.day_time }}</p></div>
+    <div class="col">Location: <p>{{ event.location }}</p></div>
   </div>
   <hr>
 
@@ -30,21 +30,14 @@
         </div>
       </div>
 
-      <div class="col-2">
+      <div class="col-3">
         <div class="form-group">
           <label>Opus</label>
           <input class="form-control" type="text" name="opus">
         </div>
       </div>
 
-      <div class="col-2">
-        <div class="form-group">
-          <label>Date Played</label>
-          <input class="form-control" type="text" name="date_played">
-        </div>
-      </div>
-
-      <div class="col-2">
+      <div class="col-3">
         <div class="form-group">
           <label for="ensemble_id">Ensemble</label>
           <select id="ensemble_id" class="form-control" name="ensemble_id">

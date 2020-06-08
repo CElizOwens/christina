@@ -25,6 +25,14 @@ def insert_event(location, day_time):
         con.execute(text("INSERT INTO event (location, day_time) VALUES (:location, :day_time);"), location=location, day_time=day_time)
 
 
+def get_event(event_id):
+    with engine.connect() as con:
+        result = con.execute(text("SELECT e.id, e.location, e.day_time FROM event e WHERE e.id = :event_id;"), event_id=event_id)
+        for row in result:
+            event = Event(**row)
+    return event
+
+
 def get_all_events():
     with engine.connect() as con:
         result = con.execute("SELECT * FROM event;")
