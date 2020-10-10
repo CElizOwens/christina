@@ -1,4 +1,4 @@
-from website.models.model import Piece, Ensemble, Event
+from website.models.model import Piece, Event # , Ensemble
 from website.config import databaseURI
 from sqlalchemy import create_engine, text
 
@@ -8,17 +8,18 @@ engine = create_engine(databaseURI, echo=True)
 
 def get_all_pieces():
     with engine.connect() as con:
-        result = con.execute("SELECT c.name, p.title, p.opus, e.ens_type FROM piece p INNER JOIN ensemble e ON p.ensemble_id = e.id INNER JOIN composer c ON p.composer_id = c.id;")
+        # result = con.execute("SELECT c.name, p.title, p.opus, e.ens_type FROM piece p INNER JOIN ensemble e ON p.ensemble_id = e.id INNER JOIN composer c ON p.composer_id = c.id;")
+        result = con.execute("SELECT c.name, p.title FROM piece p INNER JOIN composer c ON p.composer_id = c.id;")
         pieces = []
         for row in result:
             pieces.append(Piece(**row))
     return pieces
 
 
-def insert_piece(composer, title, opus, ensemble_id):
+def insert_piece(composer, title): # , opus, ensemble_id):
     with engine.connect() as con:
-        con.execute(text("INSERT INTO piece (composer, title, opus, ensemble_id) VALUES (:composer, :title, :opus, :ensemble_id);"), composer=composer, title=title, opus=opus, ensemble_id=ensemble_id)
-
+        # con.execute(text("INSERT INTO piece (composer, title, opus, ensemble_id) VALUES (:composer, :title, :opus, :ensemble_id);"), composer=composer, title=title, opus=opus, ensemble_id=ensemble_id)
+        con.execute(text("INSERT INTO piece (composer, title) VALUES (:composer, :title);"), composer=composer, title=title)
 
 def insert_event(location, day_time):
     with engine.connect() as con:
@@ -42,10 +43,10 @@ def get_all_events():
     return events
 
 
-def get_all_ensembles():
-    with engine.connect() as con:
-        result = con.execute("SELECT * FROM ensemble;")
-        ensembles = []
-        for row in result:
-            ensembles.append(Ensemble(**row))
-    return ensembles
+# def get_all_ensembles():
+#     with engine.connect() as con:
+#         result = con.execute("SELECT * FROM ensemble;")
+#         ensembles = []
+#         for row in result:
+#             ensembles.append(Ensemble(**row))
+#     return ensembles

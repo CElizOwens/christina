@@ -14,26 +14,28 @@
   <form action="/repertoire" method="POST">
     <div class="row">
 
-      <div class="col-3">
+      <div class="col-5">
         <div class="form-group">
           <label>Composer</label>
           <input class="form-control" type="text" name="composer">
         </div>
       </div>
 
-      <div class="col-3">
+      <div class="col-5">
         <div class="form-group">
           <label>Title</label>
           <input class="form-control" type="text" name="title">
         </div>
       </div>
 
-      <div class="col-3">
+      <div class="col-2"></div>
+
+      <!-- <div class="col-3">
         <div class="form-group">
           <label>Opus</label>
           <input class="form-control" type="text" name="opus">
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="col-2">
         <div class="form-group">
@@ -42,7 +44,7 @@
         </div>
       </div> -->
 
-      <div class="col-3">
+      <!-- <div class="col-3">
         <div class="form-group">
           <label for="ensemble_id">Ensemble</label>
           <select id="ensemble_id" class="form-control" name="ensemble_id">
@@ -52,7 +54,8 @@
             {% endfor %}
           </select>
         </div>
-      </div>
+      </div> -->
+
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
@@ -60,21 +63,26 @@
 
   {% for piece in pieces %}
   <div class="row">
-    <div class="col-3">
+
+    <div class="col-5">
       {{ piece.name }}
     </div>
-    <div class="col-3">
+
+    <div class="col-5">
       {{ piece.title }}
     </div>
-    <div class="col-3">
+
+    <div class="col-2"></div>
+
+    <!-- <div class="col-3">
       {{ piece.opus }}
-    </div>
+    </div> -->
     <!-- <div class="col-2">
       {{ piece.date_played }}
     </div> -->
-    <div class="col-3">
+    <!-- <div class="col-3">
       {{ piece.ens_type }}
-    </div>
+    </div> -->
   </div>
   {% endfor %}
 
