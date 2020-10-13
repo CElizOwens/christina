@@ -28,18 +28,8 @@ CREATE TABLE `composer` (
   `link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uc_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `composer`
---
-
-LOCK TABLES `composer` WRITE;
-/*!40000 ALTER TABLE `composer` DISABLE KEYS */;
-INSERT INTO `composer` VALUES (1,'Mozart',NULL),(2,'Bach',NULL),(3,'Kuhlau',NULL),(4,'Dvorak',NULL),(5,'Owens',NULL),(6,'Beethoven',NULL);
-/*!40000 ALTER TABLE `composer` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `venue`
@@ -56,7 +46,7 @@ CREATE TABLE `venue` (
   `link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uc_name_address` (`name`, `address`)
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,18 +62,8 @@ CREATE TABLE `event` (
   `day_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uc_venid_dt` (`venue_id`, `day_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `event`
---
-
-LOCK TABLES `event` WRITE;
-/*!40000 ALTER TABLE `event` DISABLE KEYS */;
-INSERT INTO `event` VALUES (2,'Baker and Commons','2019-08-03 18:00:00'),(3,'Caffe Chiave, Piedmont','2018-05-25 19:00:00');
-/*!40000 ALTER TABLE `event` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `performance`
@@ -101,15 +81,6 @@ CREATE TABLE `performance` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `performance`
---
-
-LOCK TABLES `performance` WRITE;
-/*!40000 ALTER TABLE `performance` DISABLE KEYS */;
-/*!40000 ALTER TABLE `performance` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `instrument`
 --
 
@@ -120,18 +91,8 @@ CREATE TABLE `instrument` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `instrument`
---
-
-LOCK TABLES `instrument` WRITE;
-/*!40000 ALTER TABLE `instrument` DISABLE KEYS */;
-INSERT INTO `instrument` VALUES (1,'violin'),(2,'viola'),(3,'cello'),(4,'piano'),(5,'banjo'),(6,'accordion'),(7,'harmonica'),(8,'mandolin');
-/*!40000 ALTER TABLE `instrument` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `musician`
@@ -144,18 +105,8 @@ CREATE TABLE `musician` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `musician`
---
-
-LOCK TABLES `musician` WRITE;
-/*!40000 ALTER TABLE `musician` DISABLE KEYS */;
-INSERT INTO `musician` VALUES (1,'Owens, Christina'),(2,'Walton, Eric');
-/*!40000 ALTER TABLE `musician` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `performance_musician`
@@ -169,7 +120,7 @@ CREATE TABLE `performance_musician` (
   `musician_instrument_id` int NOT NULL,
   `part` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`performance_id`,`musician_instrument_id`)
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,18 +136,8 @@ CREATE TABLE `musician_instrument` (
   `instrument_id` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uc_musid_instid` (`musician_id`,`instrument_id`)
-)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `musician_instrument`
---
-
-LOCK TABLES `musician_instrument` WRITE;
-/*!40000 ALTER TABLE `musician_instrument` DISABLE KEYS */;
-INSERT INTO `musician_instrument` VALUES (1,1),(1,2),(1,4),(1,7),(1,8),(2,3),(2,4),(2,5),(2,6);
-/*!40000 ALTER TABLE `musician_instrument` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `piece`
@@ -212,18 +153,9 @@ CREATE TABLE `piece` (
   `link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uc_compid_title` (`composer_id`,`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `piece`
---
-
-LOCK TABLES `piece` WRITE;
-/*!40000 ALTER TABLE `piece` DISABLE KEYS */;
-INSERT INTO `piece` VALUES (12,3,'Flute Quintet No. 3',NULL),(13,1,'Flute Quartet No. 3',NULL),(14,4,'String Quartet No. 10',NULL),(15,1,'String Quartet No. 17',NULL),(17,2,'Flute Quartet No. 1',NULL),(18,5,'Reflections',NULL);
-/*!40000 ALTER TABLE `piece` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
