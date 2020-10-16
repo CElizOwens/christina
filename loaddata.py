@@ -2,6 +2,7 @@
 
 import pandas as pd
 import numpy as np
+from itertools import groupby
 from website.config import testDatabaseURI
 from sqlalchemy import create_engine, text
 
@@ -46,34 +47,36 @@ def get_composer_id(name, connection):
 # populate mysql composer and piece tables
 # composer table first because piece table uses composer_id
 with engine.begin() as con:
-    print("Loading composer data into table...\n")
-    for idx in range(len(composers_df)):
-        name = composers_df.iloc[idx]['name']
-        link = composers_df.iloc[idx]['link']
+    print("\nLoading composer data into table...")
+
+    # Filling composer table takes about 10 seconds
+    comps_list = list(composers_df.itertuples(index=False, name=None))
+    for name, link in comps_list:
         con.execute(text("INSERT INTO composer (name, link) VALUES (:name, :link);"), name=name, link=link)
 
-    # composers_df.to_sql('composer', con=con, if_exists='append')
+    # for idx in composers_df.index:
+    #     row = composers_df.loc[idx]
+    #     name = row['name']
+    #     link = row['link']
+    #     con.execute(text("INSERT INTO composer (name, link) VALUES (:name, :link);"), name=name, link=link)
 
-    # REDO SECOND HALF OF THIS!!!
-    print("Composer table loaded.\n")
+    print("Composer table loaded.\n\nLoading piece table...")
 
-# UNCOMMENT FROM HERE...
+    # Filling piece table takes a little less than 4 minutes
+    works_list = list(works_df.itertuples(index=False, name=None))
+    """
+        params = {'title1': 'jijjiji', 'link1': 'ijiji', 'title2': ''}
+        s = "INSERT INTO piece (composer_id, title, link)
+        VALUES
+        (:composer_id, :title1, :link1),
+        (:composer_id, :title2, :link2),
+        (:composer_id, :title3, :link3)"
+    """
 
-    print("Loading piece table...\n")
-    for row in works_df.index:
-        composer_id = get_composer_id(works_df.loc[row, 'name'], con)
-        title = works_df.loc[row, 'title']
-        link = works_df.loc[row, 'link']
-        con.execute(text("INSERT INTO piece (composer_id, title, link) VALUES (:composer_id, :title, :link);"), composer_id=composer_id, title=title, link=link)
+    # row[0] = name, row[1] = title, row[2] = link
+    for name, group in groupby(works_list, lambda row: row[0]):
+        composer_id = get_composer_id(name, con)
+        for work in group:
+            con.execute(text("INSERT INTO piece (composer_id, title, link) VALUES (:composer_id, :title, :link);"), composer_id=composer_id, title=work[1], link=work[2])
 
-    # works_df.to_sql('piece', con=con, if_exists='append')
-
-print("Piece table loaded. Done.\n")
-
-# ...TO HERE.
-
-
-
-
-# for row in works_df:
-# INSERT row INTO piece given title, link, get_composer_id(composer_name)
+print("Piece table loaded.\n\n'loaddata.py' FINISHED!\n")
