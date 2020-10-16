@@ -24,10 +24,10 @@ DROP TABLE IF EXISTS `composer`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `composer` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT 'Unknown',
-  `link` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uc_name` (`name`)
+  `name` Varchar(255) DEFAULT 'Unknown',
+  `link` Varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+  -- UNIQUE KEY `uc_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,9 +41,9 @@ DROP TABLE IF EXISTS `venue`;
 
 CREATE TABLE `venue` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `link` varchar(255) DEFAULT NULL,
+  `name` Varchar(255) NOT NULL,
+  `address` Varchar(255) DEFAULT NULL,
+  `link` Varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uc_name_address` (`name`, `address`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -75,7 +75,7 @@ DROP TABLE IF EXISTS `performance`;
 CREATE TABLE `performance` (
   `event_id` int NOT NULL,
   `piece_id` int NOT NULL,
-  `notes` varchar(255) DEFAULT NULL,
+  `notes` Varchar(255) DEFAULT NULL,
   PRIMARY KEY (`event_id`,`piece_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -89,7 +89,7 @@ DROP TABLE IF EXISTS `instrument`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `instrument` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `name` Varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -103,7 +103,7 @@ DROP TABLE IF EXISTS `musician`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `musician` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `name` Varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -118,7 +118,7 @@ DROP TABLE IF EXISTS `performance_musician`;
 CREATE TABLE `performance_musician` (
   `performance_id` int NOT NULL,
   `musician_instrument_id` int NOT NULL,
-  `part` varchar(255) DEFAULT NULL,
+  `part` Varchar(255) DEFAULT NULL,
   PRIMARY KEY (`performance_id`,`musician_instrument_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -149,10 +149,10 @@ DROP TABLE IF EXISTS `piece`;
 CREATE TABLE `piece` (
   `id` int NOT NULL AUTO_INCREMENT,
   `composer_id` int NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `link` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uc_compid_title` (`composer_id`,`title`)
+  `title` Varchar(255) NOT NULL,
+  `link` Varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+  -- UNIQUE KEY `uc_compid_title` (`composer_id`,`title`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

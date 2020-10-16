@@ -16,10 +16,10 @@ def get_all_pieces():
     return pieces
 
 
-def insert_piece(composer, title): # , opus, ensemble_id):
+def insert_piece(name, title): # , opus, ensemble_id):
     with engine.connect() as con:
         # con.execute(text("INSERT INTO piece (composer, title, opus, ensemble_id) VALUES (:composer, :title, :opus, :ensemble_id);"), composer=composer, title=title, opus=opus, ensemble_id=ensemble_id)
-        con.execute(text("INSERT INTO piece (composer, title) VALUES (:composer, :title);"), composer=composer, title=title)
+        con.execute(text("INSERT INTO piece (name, title) VALUES (:name, :title);"), name=name, title=title)
 
 def insert_event(location, day_time):
     with engine.connect() as con:
