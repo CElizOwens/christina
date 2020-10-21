@@ -52,7 +52,7 @@ with engine.begin() as con:
     # Filling composer table takes about 10 seconds
     comps_list = list(composers_df.itertuples(index=False, name=None))
     for name, link in comps_list:
-        con.execute(text("INSERT INTO composer (name, link) VALUES (:name, :link);"), name=name, link=link)
+        con.execute(text("INSERT IGNORE INTO composer (name, link) VALUES (:name, :link);"), name=name, link=link)
 
     # for idx in composers_df.index:
     #     row = composers_df.loc[idx]
@@ -77,6 +77,6 @@ with engine.begin() as con:
     for name, group in groupby(works_list, lambda row: row[0]):
         composer_id = get_composer_id(name, con)
         for work in group:
-            con.execute(text("INSERT INTO piece (composer_id, title, link) VALUES (:composer_id, :title, :link);"), composer_id=composer_id, title=work[1], link=work[2])
+            con.execute(text("INSERT IGNORE INTO piece (composer_id, title, link) VALUES (:composer_id, :title, :link);"), composer_id=composer_id, title=work[1], link=work[2])
 
 print("Piece table loaded.\n\n'loaddata.py' FINISHED!\n")

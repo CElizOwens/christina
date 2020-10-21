@@ -29,7 +29,7 @@ def repertoire():
         redirect('/repertoire')
     all_pieces = persistence.get_all_pieces()
     # all_ensembles = persistence.get_all_ensembles()
-    return render_template('admin/repertoire.html', pieces=all_pieces) #    , ensembles=all_ensembles)
+    return render_template('admin/repertoire.html', pieces=all_pieces)  #    , ensembles=all_ensembles)
 
 
 @app.route('/events', methods=['GET', 'POST'])
