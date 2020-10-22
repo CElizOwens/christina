@@ -17,7 +17,7 @@ def get_all_pieces():
     #         pieces.append(Piece(**row))
     # return pieces
 
-        res = con.execute("SELECT c.name, p.title FROM piece p INNER JOIN composer c ON p.composer_id = c.id LIMIT 10;")
+        res = con.execute("SELECT c.name, p.title FROM performance pf INNER JOIN piece p ON pf.piece_id = p.id INNER JOIN composer c ON p.composer_id = c.id;")
 
         repertoire = []
         for row in res:
