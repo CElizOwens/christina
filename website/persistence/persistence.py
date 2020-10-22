@@ -1,4 +1,4 @@
-from website.models.model import Piece, Event  # , Ensemble
+from website.models.model import Piece, Event, Performance  # , Ensemble
 from website.config import databaseURI, test_databaseURI
 from sqlalchemy import create_engine, text
 
@@ -22,6 +22,15 @@ def get_all_pieces():
         repertoire = []
         for row in res:
             repertoire.append(Piece(**row))
+    return repertoire
+
+
+def get_all_performances():
+    with engine.connect() as con:
+        result = con.execute("SELECT c.name, p.title, pf.notes FROM performance pf INNER JOIN piece p ON pf.piece_id = p.id INNER JOIN composer c ON p.composer_id = c.id;")
+        repertoire = []
+        for row in result:
+            repertoire.append(Performance(**row))
     return repertoire
 
 

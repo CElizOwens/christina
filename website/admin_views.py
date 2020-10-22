@@ -21,15 +21,18 @@ def repertoire():
     if request.method == 'POST':
         composer = request.form['composer']
         title = request.form['title']
+        notes = request.form['notes']
         # opus = request.form['opus']
         # date_played = parse(request.form['date_played']).date()
         # ensemble_id = request.form['ensemble_id']
         # persistence.insert_piece(composer, title, opus, ensemble_id)
         persistence.insert_piece(composer, title)
         redirect('/repertoire')
-    all_pieces = persistence.get_all_pieces()
-    # all_ensembles = persistence.get_all_ensembles()
-    return render_template('admin/repertoire.html', pieces=all_pieces)  #    , ensembles=all_ensembles)
+    # all_pieces = persistence.get_all_pieces()
+    # # all_ensembles = persistence.get_all_ensembles()
+    # return render_template('admin/repertoire.html', pieces=all_pieces)  #    , ensembles=all_ensembles)
+    all_performances = persistence.get_all_performances()
+    return render_template('admin/repertoire.html', performances=all_performances)
 
 
 @app.route('/events', methods=['GET', 'POST'])

@@ -14,21 +14,26 @@
   <form action="/repertoire" method="POST">
     <div class="row">
 
-      <div class="col-5">
+      <div class="col-3">
         <div class="form-group">
           <label>Composer</label>
           <input class="form-control" type="text" name="composer">
         </div>
       </div>
 
-      <div class="col-5">
+      <div class="col-4">
         <div class="form-group">
           <label>Title</label>
           <input class="form-control" type="text" name="title">
         </div>
       </div>
 
-      <div class="col-2"></div>
+      <div class="col-5">
+        <div class="form-group">
+          <label>Notes</label>
+          <input class="form-control" type="text" name="notes">
+        </div>
+      </div>
 
       <!-- <div class="col-3">
         <div class="form-group">
@@ -60,7 +65,7 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   <hr>
-
+<!--
   {% for piece in pieces %}
   <div class="row">
 
@@ -75,15 +80,24 @@
     <div class="col-2">
     </div>
 
-    <!-- <div class="col-3">
-      {{ piece.opus }}
-    </div> -->
-    <!-- <div class="col-2">
-      {{ piece.date_played }}
-    </div> -->
-    <!-- <div class="col-3">
-      {{ piece.ens_type }}
-    </div> -->
+  </div>
+  {% endfor %} -->
+
+  {% for performance in performances %}
+  <div class="row">
+
+    <div class="col-3">
+      {{ performance.name }}
+    </div>
+
+    <div class="col-4">
+      {{ performance.title }}
+    </div>
+
+    <div class="col-5">
+      {{ performance.notes }}
+    </div>
+
   </div>
   {% endfor %}
 
