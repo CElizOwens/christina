@@ -40,14 +40,14 @@ def insert_piece(name, title):  # , opus, ensemble_id):
         con.execute(text("INSERT INTO piece (name, title) VALUES (:name, :title);"), name=name, title=title)
 
 
-def insert_event(location, day_time):
+def insert_event(location, day_time):  # TO BE EDITED
     with engine.connect() as con:
         con.execute(text("INSERT INTO event (location, day_time) VALUES (:location, :day_time);"), location=location, day_time=day_time)
 
 
 def get_event(event_id):
     with engine.connect() as con:
-        result = con.execute(text("SELECT e.id, e.location, e.day_time FROM event e WHERE e.id = :event_id;"), event_id=event_id)
+        result = con.execute(text("SELECT e.id, v.name, e.day_time FROM event e INNER JOIN venue v ON e.venue_id = v.id WHERE e.id = :event_id;"), event_id=event_id)
         for row in result:
             event = Event(**row)
     return event
@@ -55,7 +55,7 @@ def get_event(event_id):
 
 def get_all_events():
     with engine.connect() as con:
-        result = con.execute("SELECT * FROM event;")
+        result = con.execute("SELECT e.id, v.name, e.day_time FROM event e INNER JOIN venue v ON e.venue_id = v.id;")
         events = []
         for row in result:
             events.append(Event(**row))
