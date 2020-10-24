@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, abort
+from flask import render_template, request, redirect, url_for, abort
 from website.persistence import persistence
 from website import app
 from dateutil.parser import parse
@@ -50,13 +50,17 @@ def events():
     return render_template('admin/events.html', programs=programs)
 
 
-@app.route('/edit_event/<event_id>/<name>/<day_time>/<performances>')
-def edit_event(event_id, name, day_time, performances):
-    # event = persistence.get_event(program)
-    # print(event)
-
-    # event = {'id': event.id, 'venue': event.venue, 'day_time': parse(str(event.day_time))}
-    return render_template('admin/edit_event.html', event_id=event_id, name=name, day_time=day_time, performances=performances)
+@app.route('/edit_event/<event_id>', methods=['GET', 'POST'])
+def edit_event(event_id):
+    if request.method == 'POST':
+        name = request.form['name']
+        title = request.form['title']
+        notes = request.form['notes']
+        persistence.insert_performance(event_id, name, title, notes)
+        redirect(url_for('edit_event', event_id=event_id))
+    event = persistence.get_event(event_id)
+    program = persistence.get_program(event)
+    return render_template('admin/edit_event.html', event_id=event_id, program=program)
 
 
 rost = {

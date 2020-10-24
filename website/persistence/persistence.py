@@ -52,7 +52,7 @@ def get_all_performances():
     return performances
 
 
-def insert_piece(name, title):  # , opus, ensemble_id):
+def insert_piece(name, title):  # TO BE EDITED
     with engine.connect() as con:
         # con.execute(text("INSERT INTO piece (composer, title, opus, ensemble_id) VALUES (:composer, :title, :opus, :ensemble_id);"), composer=composer, title=title, opus=opus, ensemble_id=ensemble_id)
         con.execute(text("INSERT INTO piece (name, title) VALUES (:name, :title);"), name=name, title=title)
@@ -61,6 +61,14 @@ def insert_piece(name, title):  # , opus, ensemble_id):
 def insert_event(location, day_time):  # TO BE EDITED
     with engine.connect() as con:
         con.execute(text("INSERT INTO event (location, day_time) VALUES (:location, :day_time);"), location=location, day_time=day_time)
+
+
+def insert_performance(event_id, name, title, notes):
+    with engine.connect() as con:
+        result = con.execute(text("SELECT p.id FROM piece p INNER JOIN composer c ON p.composer_id = c.id WHERE c.name = :name AND p.title = :title;"), name=name, title=title)
+        row = result.fetchone()
+        piece_id = row.id
+        con.execute(text("INSERT INTO performance (event_id, piece_id, notes) VALUES (:event_id, :piece_id, :notes);"), event_id=event_id, piece_id=piece_id, notes=notes)
 
 
 # returns an event namedtuple

@@ -33,11 +33,7 @@
       </div>
       <div class="col-3">
         <!-- <a href="/edit_event/{{ program }}">Edit</a> -->
-        {% set perf_list = [] %}
-        {% for perf in program.performances %}
-          {{ perf_list.append({'name': perf.name, 'title': perf.title, 'notes': perf.notes} or "") }}
-        {% endfor %}
-        <a href="{{ url_for('edit_event', event_id=program.event.id, name=program.event.name, day_time=program.event.day_time, performances=perf_list) }}">Edit</a>
+        <a href="{{ url_for('edit_event', event_id=program.event.id) }}">Edit</a>
       </div>
       <div class="col-3"></div>
     </div>

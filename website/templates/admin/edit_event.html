@@ -8,54 +8,45 @@
     <div class="col">
       <h2>Edit Event</h2>
     </div>
-    <div class="col"><h4>Date:</h4><p>{{ event.day_time }}</p></div>
-    <div class="col"><h4>Location:</h4><p>{{ event.name }}</p></div>
+    <div class="col"><h4>Date:</h4><p>{{ program.event.day_time }}</p></div>
+    <div class="col"><h4>Location:</h4><p>{{ program.event.name }}</p></div>
   </div>
   <hr>
 
-  <form action="/repertoire" method="POST">
+  <form action="{{ url_for('edit_event', event_id=program.event.id) }}" method="POST">
     <div class="row">
 
       <div class="col-3">
         <div class="form-group">
           <label>Composer</label>
-          <input class="form-control" type="text" name="composer">
+          <input class="form-control" type="text" name="name">
         </div>
       </div>
 
-      <div class="col-3">
+      <div class="col-4">
         <div class="form-group">
           <label>Title</label>
           <input class="form-control" type="text" name="title">
         </div>
       </div>
 
-      <div class="col-3">
+      <div class="col-4">
         <div class="form-group">
-          <label>Opus</label>
-          <input class="form-control" type="text" name="opus">
+          <label>Notes</label>
+          <input class="form-control" type="text" name="notes">
         </div>
       </div>
 
-      <div class="col-3">
-        <div class="form-group">
-          <label for="ensemble_id">Ensemble</label>
-          <select id="ensemble_id" class="form-control" name="ensemble_id">
-            <option selected>Choose</option>
-            {% for ensemble in ensembles %}
-              <option value="{{ ensemble.id }}">{{ ensemble.ens_type }}</option>
-            {% endfor %}
-          </select>
-        </div>
-      </div>
+      <div class="col-1"></div>
+
     </div>
-
     <button type="submit" class="btn btn-primary">Add Piece</button>
   </form>
   <hr>
 
-  {% for performance in performances %}
+  {% for performance in program.performances %}
   <div class="row">
+
     <div class="col-3">
       {{ performance.name }}
     </div>
@@ -67,12 +58,11 @@
     <div class="col-4">
       {{ performance.notes }}
     </div>
-    <!-- <div class="col-2">
-      {{ piece.date_played }}
-    </div> -->
+
     <div class="col-1">
-      Edit Delete
+      Edit/Delete
     </div>
+
   </div>
   {% endfor %}
 
