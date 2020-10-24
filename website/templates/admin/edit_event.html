@@ -54,22 +54,24 @@
   </form>
   <hr>
 
-  {% for piece in pieces %}
+  {% for performance in performances %}
   <div class="row">
     <div class="col-3">
-      {{ piece.composer }}
+      {{ performance.name }}
     </div>
-    <div class="col-3">
-      {{ piece.title }}
+
+    <div class="col-4">
+      {{ performance.title }}
     </div>
-    <div class="col-3">
-      {{ piece.opus }}
+
+    <div class="col-4">
+      {{ performance.notes }}
     </div>
     <!-- <div class="col-2">
       {{ piece.date_played }}
     </div> -->
-    <div class="col-3">
-      {{ piece.ens_type }}
+    <div class="col-1">
+      Edit Delete
     </div>
   </div>
   {% endfor %}

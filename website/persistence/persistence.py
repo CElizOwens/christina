@@ -1,4 +1,4 @@
-from website.models.model import Piece, Event, Performance  # , Ensemble
+from website.models.model import Piece, Event, Performance, Program  # , Ensemble
 from website.config import databaseURI, test_databaseURI
 from sqlalchemy import create_engine, text
 
@@ -25,13 +25,31 @@ def get_all_pieces():
     return repertoire
 
 
+# returns a program namedtuple
+def get_program(event):
+    performances = get_event_performances(event.id)
+    program = Program(event, performances)
+    return program
+
+
+# returns a list of performance namedtuples from a single event
+def get_event_performances(event_id):
+    with engine.connect() as con:
+        result = con.execute(text("SELECT c.name, p.title, pf.notes FROM performance pf  INNER JOIN piece p ON pf.piece_id = p.id INNER JOIN composer c ON p.composer_id = c.id WHERE pf.event_id = :event_id;"), event_id=event_id)
+        performances = []
+        for row in result:
+            performances.append(Performance(**row))
+    return performances
+
+
+# returns a list of all performance namedtuples
 def get_all_performances():
     with engine.connect() as con:
         result = con.execute("SELECT c.name, p.title, pf.notes FROM performance pf INNER JOIN piece p ON pf.piece_id = p.id INNER JOIN composer c ON p.composer_id = c.id;")
-        repertoire = []
+        performances = []
         for row in result:
-            repertoire.append(Performance(**row))
-    return repertoire
+            performances.append(Performance(**row))
+    return performances
 
 
 def insert_piece(name, title):  # , opus, ensemble_id):
@@ -45,14 +63,16 @@ def insert_event(location, day_time):  # TO BE EDITED
         con.execute(text("INSERT INTO event (location, day_time) VALUES (:location, :day_time);"), location=location, day_time=day_time)
 
 
+# returns an event namedtuple
 def get_event(event_id):
     with engine.connect() as con:
         result = con.execute(text("SELECT e.id, v.name, e.day_time FROM event e INNER JOIN venue v ON e.venue_id = v.id WHERE e.id = :event_id;"), event_id=event_id)
-        for row in result:
-            event = Event(**row)
+        row = result.fetchone()
+        event = Event(**row)
     return event
 
 
+# returns a list of of all event namedtuples
 def get_all_events():
     with engine.connect() as con:
         result = con.execute("SELECT e.id, v.name, e.day_time FROM event e INNER JOIN venue v ON e.venue_id = v.id;")

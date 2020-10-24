@@ -5,3 +5,7 @@ Piece = namedtuple('Piece', ['name', 'title']) # , 'opus', 'ens_type'])
 Event = namedtuple('Event', ['id', 'name', 'day_time'])
 
 Performance = namedtuple('Performance', ['name', 'title', 'notes'])
+
+# event -> an Event namedtuple
+# performances -> a list of performance namedtuples
+Program = namedtuple('Program', ['event', 'performances'])
