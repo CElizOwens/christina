@@ -3,11 +3,11 @@
 import pandas as pd
 import numpy as np
 from itertools import groupby
-from website.config import testDatabaseURI
+from website.config import test_databaseURI
 from sqlalchemy import create_engine, text
 
 
-engine = create_engine(testDatabaseURI, echo=False)
+engine = create_engine(test_databaseURI, echo=False)
 
 composers = pd.read_pickle('~/Python_Workspace/jupyter_workspace/opus_eda/composers.pkl')
 works = pd.read_pickle('~/Python_Workspace/jupyter_workspace/opus_eda/works.pkl')
