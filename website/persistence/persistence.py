@@ -1,4 +1,4 @@
-from website.models.model import Piece, Event, Performance, Program  # , Ensemble
+from website.models.model import Piece, Event, Venue, Performance, Program  # , Ensemble
 from website.config import databaseURI, test_databaseURI
 from sqlalchemy import create_engine, text
 
@@ -23,6 +23,16 @@ def get_all_pieces():
         for row in res:
             repertoire.append(Piece(**row))
     return repertoire
+
+
+def get_all_venues():
+    with engine.connect() as con:
+        result = con.execute("SELECT * FROM venue;")
+        venues = []
+        for row in result:
+            venues.append(Venue(**row))
+    return venues
+
 
 
 # returns a program namedtuple
@@ -56,6 +66,11 @@ def insert_piece(name, title):  # TO BE EDITED
     with engine.connect() as con:
         # con.execute(text("INSERT INTO piece (composer, title, opus, ensemble_id) VALUES (:composer, :title, :opus, :ensemble_id);"), composer=composer, title=title, opus=opus, ensemble_id=ensemble_id)
         con.execute(text("INSERT INTO piece (name, title) VALUES (:name, :title);"), name=name, title=title)
+
+
+def insert_venue(name, address, link):
+    with engine.connect() as con:
+        con.execute(text("INSERT IGNORE INTO venue (name, address, link) VALUES (:name, :address, :link);"), name=name, address=address, link=link)
 
 
 def insert_event(location, day_time):  # TO BE EDITED

@@ -35,6 +35,18 @@ def repertoire():
     return render_template('admin/repertoire.html', performances=all_performances)
 
 
+@app.route('/venues', methods=['GET', 'POST'])
+def venues():
+    if request.method == 'POST':
+        name = request.form['name']
+        address = request.form['address']
+        link = request.form['link']
+        persistence.insert_venue(name, address, link)
+        redirect('/venues')
+    venues = persistence.get_all_venues()
+    return render_template('admin/venues.html', venues=venues)
+
+
 @app.route('/events', methods=['GET', 'POST'])
 def events():
     if request.method == 'POST':
@@ -42,12 +54,13 @@ def events():
         day_time = parse(request.form['day_time'])
         persistence.insert_event(location, day_time)
         redirect('/events')
+    venues = persistence.get_all_venues()
     events = persistence.get_all_events()  # just venues and datetimes
     programs = []  # list of event and program namedtuples
     for event in events:
         program = persistence.get_program(event)
         programs.append(program)
-    return render_template('admin/events.html', programs=programs)
+    return render_template('admin/events.html', programs=programs, venues=venues)
 
 
 @app.route('/edit_event/<event_id>', methods=['GET', 'POST'])

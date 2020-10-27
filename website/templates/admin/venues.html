@@ -1,0 +1,62 @@
+{% extends 'admin/templates/admin_template.html' %}
+
+{% block title %}Venues{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Venues</h2>
+      <hr>
+    </div>
+  </div>
+
+  <form action="/venues" method="POST">
+    <div class="row">
+
+      <div class="col-3">
+        <div class="form-group">
+          <label>Venue</label>
+          <input class="form-control" type="text" name="name">
+        </div>
+      </div>
+
+      <div class="col-5">
+        <div class="form-group">
+          <label>Address</label>
+          <input class="form-control" type="text" name="address">
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group">
+          <label>Link</label>
+          <input class="form-control" type="text" name="link">
+        </div>
+      </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Add Venue</button>
+  </form>
+  <hr>
+
+  {% for venue in venues %}
+  <div class="row">
+
+    <div class="col-3">
+      <a href="{{ venue.link }}">{{ venue.name }}</a>
+    </div>
+
+    <div class="col-6">
+      {{ venue.address }}
+    </div>
+
+    <div class="col-3">
+      <!-- <a href="{{ venue.link }}">{{ venue.link }}</a> -->
+    </div>
+
+  </div>
+  {% endfor %}
+
+</div>
+{% endblock %}
