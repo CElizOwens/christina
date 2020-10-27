@@ -25,6 +25,15 @@ def get_all_pieces():
     return repertoire
 
 
+def get_all_composer_names():
+    with engine.connect() as con:
+        result = con.execute("SELECT * FROM composer;")
+        names = []
+        for row in result:
+            names.append(row.name)
+    return names
+
+
 def get_all_venues():
     with engine.connect() as con:
         result = con.execute("SELECT * FROM venue;")

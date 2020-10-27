@@ -18,8 +18,13 @@
 
       <div class="col-3">
         <div class="form-group">
-          <label>Composer</label>
-          <input class="form-control" type="text" name="name" placeholder="e.g. Beethoven, Ludwig van">
+          <label for="name">Composer</label>
+          <input list="names" type="text" name="name" id="name" placeholder="e.g. Beethoven, Ludwig van">
+          <datalist id="names">
+            {% for name in names %}
+              <option value="{{ name }}">
+            {% endfor %}
+          </datalist>
         </div>
       </div>
 

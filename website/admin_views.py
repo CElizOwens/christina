@@ -71,9 +71,10 @@ def edit_event(event_id):
         notes = request.form['notes']
         persistence.insert_performance(event_id, name, title, notes)
         redirect(url_for('edit_event', event_id=event_id))
+    names = persistence.get_all_composer_names()
     event = persistence.get_event(event_id)
     program = persistence.get_program(event)
-    return render_template('admin/edit_event.html', event_id=event_id, program=program)
+    return render_template('admin/edit_event.html', event_id=event_id, program=program, names=names)
 
 
 rost = {
