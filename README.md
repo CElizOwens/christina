@@ -1,2 +1,2 @@
-Static Opus Oakland Website
-Landing page and basic information
+Static Opus Oakland Website.
+Basic information, upcoming events, how to participate.
