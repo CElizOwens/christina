@@ -45,7 +45,7 @@ h1 {
 
 .search {
   display: inline-block;
-  float: right;
+  /* float: right; */
   margin-top: 15px;
   margin-right: 15px;
 }
@@ -82,7 +82,8 @@ nav ul {
 }
 
 .main {
-  background: #e3ffec url(../images/treblestaff.png) top left repeat;
+  background: #e3ffec;
+  /* url(../images/treblestaff.png) top left repeat */
 }
 
 .central-content {
@@ -280,7 +281,7 @@ h1 a:visited {
 .OCOlogo {
   width: 115px;
   display: inline-block;
-  float: right;
+  /* float: right; */
   padding: 0 0 10px 40px;
 }
 
@@ -289,8 +290,8 @@ h1 a:visited {
   border-radius: 10%;
 }
 
-.mission {
-}
+/* .mission {
+} */
 
 .eventexample {
   width: 50%;
@@ -317,10 +318,10 @@ h1 a:visited {
   line-height: 22px;
 }
 
-.joy {
-  /*	clear: both;
-*/
-}
+/* .joy {
+  	clear: both;
+} */
+
 .passion {
   display: inline;
   padding: 15px 20px 0px 10px;
