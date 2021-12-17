@@ -280,8 +280,8 @@ h1 a:visited {
 
 .OCOlogo {
   width: 115px;
-  display: inline-block;
-  /* float: right; */
+  /* display: inline-block; */
+  float: right;
   padding: 0 0 10px 40px;
 }
 
