@@ -1,6 +1,6 @@
 .bg-smile {
-
-  background:url("../images/stringquartet.jpg") no-repeat center center fixed;
+  background: url("https://res.cloudinary.com/hgbty1z68/image/upload/v1629324019/IMG_0017_g5ikob.jpg")
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -8,7 +8,8 @@
 }
 
 .bg-serious {
-  background:url("../images/quartet.jpg") no-repeat center center fixed;
+  background: url("https://res.cloudinary.com/hgbty1z68/image/upload/v1629403385/IMG_0038_bycxmi.jpg")
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
