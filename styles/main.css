@@ -23,6 +23,8 @@ body {
   padding: 0px 0px 0px 0px;
   background-color: #b7d0c5;
   /* background-color: #d3e8d9; */
+  min-height: 100vh;
+  min-width: 100%;
 }
 
 section {
@@ -186,6 +188,11 @@ table {
   /*	background-color: #c7e0d5; */
 }
 
+.table-size {
+  min-width: 40%;
+  max-width: 90%;
+}
+
 td {
   border: 3px solid #385140;
   padding: 3px 7px 3px 7px;
@@ -205,7 +212,8 @@ td {
 
 .flutetrio {
   display: inline-block;
-  width: 350px;
+  width: 60%;
+  /* width: 350px; */
   margin: 20px 0px 20px 10px;
 }
 
